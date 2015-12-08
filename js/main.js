@@ -7,7 +7,7 @@
           Calci.handleInput(this);
           // console.log(this);
         });
-        $(".delete").dblclick(function(){
+        $(".key.delete").dblclick(function(){
             $('#preview').html("");
             $('#result').html('');
         });
@@ -22,20 +22,25 @@
 
       },
       handleInput: function(ele){
-        if($(ele).hasClass('delete')){
-              Calci.handleData();
-        }else if ($(ele).hasClass('equals')) {
-              Calci.evaluateResult();
+          console.log(ele.dataset.value);
+          switch(ele.dataset.type){
+            case "delete":
+            Calci.handleData();
+            break;
+            case "equals":
+            Calci.evaluateResult();
+            break;
+            default:
+            $('#preview').append(ele.dataset.value);
+            break;
+          }
 
-        }else {
-          $('#preview').append($(ele).html());
-        }
       }
     };
 
   $(document).ready(function(){
 
       Calci.init();
-  });
 
 }(this));
+  });
