@@ -1,0 +1,42 @@
+body, html {
+  font-family: 'Roboto', sans-serif;
+  background-color: #193441;
+  font-weight: 300;
+  font-size: 4vh; }
+
+#calculator {
+  width: 60vh;
+  margin: 5vh auto 0; }
+
+#calculator #result {
+  height: 22vh;
+  background-color: #FCFFF5;
+  text-align: right;
+  font-weight: 100; }
+
+#calculator #preview {
+  height: 10vh;
+  background-color: #3E606F;
+  color: #FCFFF5;
+  text-align: right; }
+
+.number {
+  background-color: #D1DBBD;
+  height: 15vh;
+  line-height: 15vh;
+  text-align: center;
+  transition: background-color 0.3s ease-in; }
+  .number:hover {
+    background-color: #839f90; }
+
+#operators {
+  background-color: #D1DBBD;
+  height: 60vh;
+  padding: 0;
+  text-align: center;
+  line-height: 12vh; }
+
+.operator {
+  transition: background-color 0.3s ease-in; }
+  .operator:hover {
+    background-color: #839f90; }
