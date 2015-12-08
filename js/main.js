@@ -7,10 +7,14 @@
           Calci.handleInput(this);
           // console.log(this);
         });
+        $(".delete").dblclick(function(){
+            $('#preview').html("");
+            $('#result').html('');
+        });
       },
       evaluateResult: function(){
         $('#result').html(eval($('#preview').html()));
-        $('#preview').html(value="");
+        // $('#preview').html("");
       },
 
       handleData: function(){
@@ -34,4 +38,4 @@
       Calci.init();
   });
 
-}());
+}(this));
