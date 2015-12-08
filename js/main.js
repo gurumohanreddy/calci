@@ -1,28 +1,37 @@
+
 (function(){
-    $(document).ready(function(){
+
+    var Calci = {
+      init: function(){
         $('.key').click(function(){
-          handleInput(this);
+          Calci.handleInput(this);
           // console.log(this);
-        })
-    });
+        });
+      },
+      evaluateResult: function(){
+        $('#result').html(eval($('#preview').html()));
+        $('#preview').html(value="");
+      },
 
-    function evaluateResult(){
-      $('#result').html(eval($('#preview').html()));
-      $('#preview').html(value="");
-    }
-    function handleData(){
+      handleData: function(){
         $('#preview').html($('#preview').html().slice(0,-1));
-    }
 
-    function handleInput(ele){
-      if($(ele).hasClass('delete')){
-            handleData();
-      }else if ($(ele).hasClass('equals')) {
-            evaluateResult();
+      },
+      handleInput: function(ele){
+        if($(ele).hasClass('delete')){
+              Calci.handleData();
+        }else if ($(ele).hasClass('equals')) {
+              Calci.evaluateResult();
 
-      }else {
-        $('#preview').append($(ele).html());
+        }else {
+          $('#preview').append($(ele).html());
+        }
       }
-    }
+    };
 
-}.call(this));
+  $(document).ready(function(){
+
+      Calci.init();
+  });
+
+}());
